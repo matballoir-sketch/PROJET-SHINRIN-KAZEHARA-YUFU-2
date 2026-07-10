@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#120817" />
+  <meta name="description" content="Présentation RP cinématique de Shinrin Kazehara — Kinoe du Souffle de la Fleur, serveur YUFU." />
+  <title>Shinrin Kazehara — Kinoe du Souffle de la Fleur</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="noise"></div>
+  <canvas id="petalCanvas" aria-hidden="true"></canvas>
+
+  <div id="intro" class="intro-screen">
+    <div class="intro-ring"><span>花</span></div>
+    <p class="eyebrow">YUFU — ARCHIVES DU CORPS DES POURFENDEURS</p>
+    <h1>Shinrin Kazehara</h1>
+    <p class="intro-subtitle">Kinoe du Souffle de la Fleur</p>
+    <button id="enterBtn" class="primary-btn">Entrer dans son histoire</button>
+    <p class="intro-note">L’entrée active la musique et les animations.</p>
+  </div>
+
+  <header class="topbar">
+    <a class="brand" href="#accueil"><span class="brand-mark">花</span><span>Shinrin Kazehara</span></a>
+    <nav class="desktop-nav" aria-label="Navigation principale">
+      <a href="#identite">Identité</a>
+      <a href="#lore">Lore</a>
+      <a href="#souffle">Souffle</a>
+      <a href="#chronologie">Chronologie</a>
+      <a href="#relations">Relations</a>
+      <a href="#lieux">Lieux</a>
+    </nav>
+    <div class="top-actions">
+      <button id="musicToggle" class="icon-btn" aria-label="Activer ou couper la musique">♪</button>
+      <button id="menuToggle" class="icon-btn menu-btn" aria-label="Ouvrir le menu">☰</button>
+    </div>
+  </header>
+
+  <aside id="mobileMenu" class="mobile-menu" aria-hidden="true">
+    <button id="closeMenu" class="menu-close" aria-label="Fermer le menu">×</button>
+    <a href="#accueil">Accueil</a><a href="#identite">Identité</a><a href="#lore">Lore</a><a href="#souffle">Souffle</a><a href="#chronologie">Chronologie</a><a href="#relations">Relations</a><a href="#lieux">Lieux</a><a href="#galerie">Galerie</a>
+  </aside>
+
+  <main>
+    <section id="accueil" class="hero section">
+      <div class="hero-backdrop"></div>
+      <div class="hero-content reveal">
+        <p class="eyebrow">DOSSIER N° 花-019 — CORPS DES POURFENDEURS</p>
+        <h1><span>Shinrin</span><br>Kazehara</h1>
+        <p class="hero-title">Kinoe du Souffle de la Fleur</p>
+        <blockquote>« Une fleur n’éclot pas pour briller, mais pour accomplir sa nature. »</blockquote>
+        <div class="hero-cta">
+          <a class="primary-btn" href="#lore">Découvrir son histoire</a>
+          <a class="ghost-btn" href="#souffle">Explorer ses techniques</a>
+        </div>
+      </div>
+      <div class="hero-stats reveal delay-1">
+        <div><span>Âge</span><strong>19 ans</strong></div>
+        <div><span>Grade</span><strong>Kinoe</strong></div>
+        <div><span>Affiliation</span><strong>Pourfendeurs</strong></div>
+        <div><span>Souffle</span><strong>Fleur</strong></div>
+      </div>
+      <div class="scroll-cue">Défiler <span></span></div>
+    </section>
+
+    <section id="identite" class="section content-section">
+      <div class="section-heading reveal">
+        <p class="eyebrow">CHAPITRE I</p>
+        <h2>Identité & Héritage</h2>
+        <p>Un héritier des plantes médicinales devenu gardien de ceux qui ne peuvent plus se défendre.</p>
+      </div>
+      <div class="identity-grid">
+        <article class="glass-card portrait-card reveal">
+          <img src="assets/shinrin-reference.png" alt="Planche de référence de Shinrin Kazehara" />
+          <div class="portrait-overlay"><span>Référence officielle</span><strong>Shinrin Kazehara</strong></div>
+        </article>
+        <article class="glass-card dossier-card reveal delay-1">
+          <div class="data-row"><span>Nom complet</span><strong>Shinrin Kazehara</strong></div>
+          <div class="data-row"><span>Date de naissance</span><strong>5 février 1897</strong></div>
+          <div class="data-row"><span>Taille</span><strong>1,80 m</strong></div>
+          <div class="data-row"><span>Grade</span><strong>Kinoe</strong></div>
+          <div class="data-row"><span>Fonctions</span><strong>Co-gérant logique du Souffle de la Fleur</strong></div>
+          <div class="data-row"><span>Brigade médicale</span><strong>Adjoint de Shinobu Kocho</strong></div>
+          <div class="data-row"><span>Brigade de formation</span><strong>Responsable École & Histoire</strong></div>
+          <div class="family-symbol">
+            <div class="sigil"><span>風</span><i></i><b>花</b></div>
+            <div><span>Emblème des Kazehara</span><p>La glycine encerclée par deux vents. Elle représente la patience, la protection et la transmission du savoir.</p></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="lore" class="section content-section lore-section">
+      <div class="section-heading reveal"><p class="eyebrow">CHAPITRE II</p><h2>La fleur qui apprit à attendre</h2><p>Le récit complet d’un enfant impatient, brisé par une nuit de sang, puis reconstruit par la discipline.</p></div>
+      <div class="chapter-tabs reveal" role="tablist">
+        <button class="tab active" data-tab="origin">Origines</button><button class="tab" data-tab="tragedy">Tragédie</button><button class="tab" data-tab="training">Formation</button><button class="tab" data-tab="ascension">Ascension</button><button class="tab" data-tab="garden">Jardin aux Cent Cadavres</button>
+      </div>
+      <div class="chapter-panels reveal delay-1">
+        <article id="origin" class="chapter-panel active"><span class="chapter-number">01</span><h3>Les champs de fleurs</h3><p>Shinrin naît dans un domaine isolé, au cœur d’une vallée couverte de fleurs médicinales. Son père parcourt les montagnes à la recherche de plantes rares tandis que sa mère transmet à Shinrin et à sa sœur Hana l’art des remèdes. Très tôt, il développe un sens aigu de l’observation, mais aussi un caractère compétitif et impatient.</p><blockquote>« Une fleur ne choisit pas le moment où elle éclot. Elle attend simplement d’être prête. »</blockquote></article>
+        <article id="tragedy" class="chapter-panel"><span class="chapter-number">02</span><h3>La nuit où tout disparut</h3><p>À treize ans, Shinrin quitte seul le domaine pour chercher une fleur rare. À son retour, un démon a massacré sa famille. Hana meurt dans ses bras malgré tous ses efforts. Dès lors, il porte une culpabilité profonde : celle de ne pas avoir été présent lorsque les siens avaient besoin de lui.</p></article>
+        <article id="training" class="chapter-panel"><span class="chapter-number">03</span><h3>Observer. Comprendre. Attendre.</h3><p>Une ancienne utilisatrice du Souffle de la Fleur élimine le démon et accepte finalement Shinrin comme disciple. Durant quatre années, elle combat son plus grand défaut : l’empressement. Elle lui interdit même le sabre pendant plusieurs mois afin qu’il apprenne l’esquive, la perception et la maîtrise émotionnelle.</p></article>
+        <article id="ascension" class="chapter-panel"><span class="chapter-number">04</span><h3>La lente ascension</h3><p>À dix-sept ans, Shinrin survit à la Sélection Finale et sauve trois candidats. Sa progression n’est jamais spectaculaire, mais constante. Il devient spécialiste des missions longues, de la traque et des démons difficiles à localiser. Chaque grade est gagné par l’expérience, la patience et la survie.</p></article>
+        <article id="garden" class="chapter-panel"><span class="chapter-number">05</span><h3>Le Jardin aux Cent Cadavres</h3><p>Encore Hinoe, il entre avec six pourfendeurs dans un domaine où des fleurs poussent à l’intérieur des morts. Après trois nuits, Shinrin est le seul survivant. Le démon lui révèle que le massacre des Kazehara est lié à un réseau ancien de créatures manipulant les plantes et les organismes vivants.</p></article>
+      </div>
+    </section>
+
+    <section id="souffle" class="section content-section techniques-section">
+      <div class="section-heading reveal"><p class="eyebrow">CHAPITRE III</p><h2>Souffle de la Fleur</h2><p>Un art fondé sur la grâce, la lecture du rythme, les trajectoires courbes et la frappe au moment exact.</p></div>
+      <div class="combat-profile reveal">
+        <div><span>Précision</span><i style="--value:94%"></i></div><div><span>Mobilité</span><i style="--value:88%"></i></div><div><span>Perception</span><i style="--value:96%"></i></div><div><span>Puissance brute</span><i style="--value:67%"></i></div><div><span>Endurance</span><i style="--value:91%"></i></div>
+      </div>
+      <div class="technique-grid">
+        <article class="tech-card reveal"><span>I</span><h3>Pétale Tourbillonnant</h3><p>Une coupe circulaire légère qui dévie l’attaque adverse avant de poursuivre sa trajectoire vers le cou.</p><b>Contre-attaque</b></article>
+        <article class="tech-card reveal delay-1"><span>II</span><h3>Danse du Cerisier</h3><p>Une rafale de frappes courtes lancées depuis plusieurs angles afin de briser la lecture de l’adversaire.</p><b>Enchaînement</b></article>
+        <article class="tech-card reveal delay-2"><span>III</span><h3>Voile de Glycine</h3><p>Des déplacements souples et imprévisibles qui enveloppent la cible et protègent les alliés proches.</p><b>Défense mobile</b></article>
+        <article class="tech-card reveal"><span>IV</span><h3>Pluie de Paulownia</h3><p>Une série de coupes descendantes coordonnées à la respiration, conçues pour immobiliser un démon rapide.</p><b>Contrôle</b></article>
+        <article class="tech-card reveal delay-1"><span>V</span><h3>Éclosion Subite</h3><p>Une accélération explosive à très courte distance. Shinrin attend l’ouverture, puis termine le duel en un battement.</p><b>Exécution</b></article>
+        <article class="tech-card reveal delay-2"><span>VI</span><h3>Tourbillon de Lotus</h3><p>Une rotation complète qui transforme l’élan ennemi en force de coupe et protège une large zone.</p><b>Riposte circulaire</b></article>
+        <article class="tech-card reveal"><span>VII</span><h3>Chute des Hortensias</h3><p>Une descente verticale suivie de coupes divergentes, comme des pétales dispersés par une pluie violente.</p><b>Assaut aérien</b></article>
+        <article class="tech-card ultimate reveal delay-1"><span>奥義</span><h3>Jardin Intérieur</h3><p>Shinrin pousse sa perception à la limite, ralentissant sa lecture du monde jusqu’à distinguer les micro-mouvements de sa cible. Cette forme est dévastatrice mais met sa vue en danger.</p><b>Forme finale — Risque extrême</b></article>
+      </div>
+    </section>
+
+    <section id="chronologie" class="section content-section timeline-section">
+      <div class="section-heading reveal"><p class="eyebrow">CHAPITRE IV</p><h2>Chronologie</h2><p>De la naissance du dernier héritier Kazehara à l’obtention du rang de Kinoe.</p></div>
+      <div class="timeline">
+        <article class="timeline-item reveal"><time>5 février 1897</time><h3>Naissance</h3><p>Shinrin naît dans le domaine médicinal des Kazehara.</p></article>
+        <article class="timeline-item reveal"><time>Printemps 1910</time><h3>Le massacre</h3><p>À treize ans, il perd son père, sa mère et sa sœur Hana.</p></article>
+        <article class="timeline-item reveal"><time>Été 1910</time><h3>La rencontre</h3><p>Une ancienne utilisatrice du Souffle de la Fleur le prend comme disciple.</p></article>
+        <article class="timeline-item reveal"><time>1910 — 1914</time><h3>Quatre années de formation</h3><p>Il transforme son impatience en perception et en discipline.</p></article>
+        <article class="timeline-item reveal"><time>Automne 1914</time><h3>Sélection Finale</h3><p>Il sauve trois candidats et reçoit son premier sabre Nichirin.</p></article>
+        <article class="timeline-item reveal"><time>1915</time><h3>Ascension méthodique</h3><p>Ses aptitudes de traqueur lui permettent de gravir les rangs.</p></article>
+        <article class="timeline-item reveal"><time>Printemps 1916</time><h3>Jardin aux Cent Cadavres</h3><p>Il survit seul et découvre un lien entre les démons-plantes et sa famille.</p></article>
+        <article class="timeline-item highlight reveal"><time>Hiver 1916</time><h3>Kinoe du Souffle de la Fleur</h3><p>À dix-neuf ans, Shinrin atteint le plus haut rang avant celui de Pilier.</p></article>
+      </div>
+    </section>
+
+    <section id="relations" class="section content-section">
+      <div class="section-heading reveal"><p class="eyebrow">CHAPITRE V</p><h2>Relations & Transmission</h2><p>Ceux qui ont façonné sa lame, sa pensée et sa manière de protéger les autres.</p></div>
+      <div class="relation-grid">
+        <article class="relation-card reveal"><div class="relation-art shinobu-art"></div><div><span>Source d’inspiration actuelle</span><h3>Shinobu Kocho</h3><p>Pilier de l’Insecte, responsable de la Brigade médicale. Shinrin l’assiste dans l’étude des poisons, des remèdes et de la transmission médicale. Il admire sa précision, sa discipline et sa capacité à dissimuler la douleur derrière le calme.</p></div></article>
+        <article class="relation-card reveal delay-1"><div class="relation-art master-art"></div><div><span>Maître disparue</span><h3>L’ancienne Fleur</h3><p>La femme qui lui apprit que la patience pouvait devenir une arme. Son corps n’a jamais été retrouvé, et Shinrin conserve l’espoir qu’elle soit encore en vie.</p></div></article>
+        <article class="relation-card reveal delay-2"><div class="relation-art hana-art"></div><div><span>Sœur cadette</span><h3>Hana Kazehara</h3><p>Sa mort constitue la blessure centrale de Shinrin. Chaque vie sauvée est, à ses yeux, une promesse silencieuse faite à Hana.</p></div></article>
+      </div>
+    </section>
+
+    <section id="lieux" class="section content-section locations-section">
+      <div class="section-heading reveal"><p class="eyebrow">CHAPITRE VI</p><h2>Lieux importants</h2><p>Deux domaines où Shinrin soigne les corps et transmet la mémoire du Corps.</p></div>
+      <div class="location-grid">
+        <article class="location-card medical reveal"><div class="location-content"><span>Brigade médicale</span><h3>Domaine Médical</h3><p>Lieu de soin, de préparation des remèdes et d’étude des poisons. Shinrin y seconde Shinobu Kocho et organise les cours sur les plantes médicinales.</p></div></article>
+        <article class="location-card school reveal delay-1"><div class="location-content"><span>Brigade de formation</span><h3>École & Archives historiques</h3><p>Un domaine consacré à la formation des jeunes pourfendeurs, à la stratégie, à l’histoire des Souffles et à la conservation des récits anciens.</p></div></article>
+      </div>
+    </section>
+
+    <section id="galerie" class="section content-section gallery-section">
+      <div class="section-heading reveal"><p class="eyebrow">ANNEXES</p><h2>Galerie & Dossier complet</h2><p>Une vue d’ensemble du personnage, de ses expressions et de son identité visuelle.</p></div>
+      <div class="gallery-grid">
+        <button class="gallery-item tall reveal" data-src="assets/shinrin-dossier.png"><img src="assets/shinrin-dossier.png" alt="Dossier visuel complet de Shinrin Kazehara" /></button>
+        <button class="gallery-item reveal delay-1" data-src="assets/shinrin-reference.png"><img src="assets/shinrin-reference.png" alt="Planche de référence du personnage" /></button>
+      </div>
+    </section>
+
+    <section class="section finale">
+      <div class="finale-inner reveal"><p class="eyebrow">DERNIER HÉRITIER DES KAZEHARA</p><h2>La véritable floraison n’a pas encore commencé.</h2><p>Le grade de Kinoe n’est pas une conclusion. Il est le seuil à partir duquel Shinrin devra choisir entre la vengeance, la vérité et la transmission.</p><a class="primary-btn" href="https://discord.gg/QX8X6PJqyB" target="_blank" rel="noreferrer">Rejoindre YUFU</a></div>
+    </section>
+  </main>
+
+  <footer><span>YUFU RP — Demon Slayer</span><span>Époque : avant les Kamado</span><span>Shinrin Kazehara — Souffle de la Fleur</span></footer>
+
+  <div id="lightbox" class="lightbox" aria-hidden="true"><button id="lightboxClose" aria-label="Fermer">×</button><img id="lightboxImg" alt="Agrandissement" /></div>
+  <div class="music-player" id="musicPlayer"><div><span>Ambiance musicale</span><strong>Fleur et Insecte</strong></div><button id="musicPlay" aria-label="Lecture ou pause">▶</button><a href="https://youtu.be/IaGsdnKORcA?si=VJBFfy6OitqgmQxc" target="_blank" rel="noreferrer">YouTube</a></div>
+  <div class="youtube-wrap" aria-hidden="true"><iframe id="youtubePlayer" src="https://www.youtube.com/embed/IaGsdnKORcA?enablejsapi=1&controls=0&loop=1&playlist=IaGsdnKORcA" title="Musique de fond" allow="autoplay; encrypted-media"></iframe></div>
+  <script src="script.js"></script>
+</body>
+</html>
